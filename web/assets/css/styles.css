@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/08/2017, 09:10:50 AM
+    Author     : Julio
+*/
+@CHARSET "UTF-8";
+@font-face {
+    font-family: 'Roboto';
+    
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AmaticSC';
+    
+    src: url('../fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gloria_Hallelujah';
+    
+    src: url('../fonts/Gloria_Hallelujah/GloriaHallelujah.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Josefin_Slab';
+    
+    src: url('../fonts/Josefin_Slab/JosefinSlab-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'KaushanScript';
+    
+    src: url('../fonts/Kaushan_Script/KaushanScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cuprum';
+    
+    src: url('../fonts/Cuprum/Cuprum-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Cuprum' !important;
+    padding-top: 60px; 
+    font-size: 16px !important;
+    letter-spacing: 1px;
+}
+
+.blog-title{
+    font-family: 'AmaticSC';
+    font-size: 100px;
+    font-weight: bold;
+}
+
+footer {
+    margin: 50px 0;
+}

@@ -1,0 +1,29 @@
+get_product:
+    type: rest
+    path:  /products/{id}
+    defaults: { _controller: AppBundle:Product:get }
+    methods: [GET]
+
+get_products:
+    type: rest
+    path:  /products
+    defaults: { _controller: AppBundle:Product:getList }
+    methods: [GET]
+
+create_product:
+    type: rest
+    path:  /products
+    defaults: { _controller: AppBundle:Product:create }
+    methods: [POST]
+
+update_product:
+    type: rest
+    path:  /products/{id}
+    defaults: { _controller: AppBundle:Product:put }
+    methods: [PUT]
+    
+delete_product:
+    type: rest
+    path:  /products/{id}
+    defaults: { _controller: AppBundle:Product:delete }
+    methods: [DELETE]    

@@ -1,0 +1,9 @@
+services:
+#    blogger_blog.example:
+#        class: Blogger\BlogBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    Blogger\BlogBundle\Controller\RegistrationController:
+        class: Blogger\BlogBundle\Controller\RegistrationController
+        autowire: true # or define your controller constructor and configure its arguments explicitly
+        tags:
+            - name: controller.service_arguments  
