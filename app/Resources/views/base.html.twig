@@ -3,7 +3,7 @@
     <html>
         <head>        
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Blog{% endblock %}</title>
+        <title>{% block title %}Test{% endblock %}</title>
         {% block stylesheets %}
             <link href="{{ asset('assets/css/styles.css') }}" type="text/css" rel="stylesheet" />
             <link href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
@@ -24,14 +24,14 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li> <a href="" class="smoothScroll">Inicio</a></li>                   
+                            <li> <a href="" class="smoothScroll"><img src="{{ asset('assets/img/logoSca.JPG') }}" class="img img-responsive" height="40" width="40"/></a></li>                   
                         </ul>               
                         <ul class="nav navbar-nav navbar-right pull-right">
-                            <li> <a href="" class="smoothScroll">Registrarse</a></li> 
+                            <li> <a href="{{ path('register_user') }}" class="smoothScroll">Sign in</a></li> 
                              {% if is_granted('ROLE_USER') %}
-                                <li> <a href="" class="smoothScroll">Ir al Panel</a></li>
+                                <li> <a href="{{ path('logout') }}" class="smoothScroll">Logout</a></li>
                              {% else %}
-                                <li> <a href="" class="smoothScroll">Ingresar</a></li>
+                                <li> <a href="{{ path('homepage') }}" class="smoothScroll">Sign up</a></li>
                              {% endif %}
                             
                         </ul>

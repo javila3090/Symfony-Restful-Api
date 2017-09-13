@@ -73,34 +73,20 @@ class SecurityController extends Controller
                     $em->persist($user);
                     $em->flush();
                     
-                    //Enviar mail
-                    $message = (new \Swift_Message('Welcome Email'))
-                    ->setFrom('admin@symfony.com')
-                    ->setTo($name)
-                    ->setBody(
-                        $this->renderView(
-                            'Blog/Emails/welcome.html.twig',
-                            array('name' => $name)
-                        ),
-                        'text/html'
-                    );
-
-                    $this->get('mailer')->send($message);
-                    
                     //generar flasdata
-                    $session->getFlashBag()->add('info', '¡Registro realizado con éxito!');
+                    $session->getFlashBag()->add('info', 'Successful!');
 
-                    return $this->redirectToRoute('registro_form');
+                    return $this->redirectToRoute('register_user');
 
                 } catch(\Exception $e) {
                     $errorMessage = $e->getMessage();
-                    $session->getFlashBag()->add('error', '¡Aviso! Ocurrió un error al registrar');
-                    return $this->redirect($this->generateUrl('registro_form'));
+                    $session->getFlashBag()->add('error', 'Error!');
+                    return $this->redirect($this->generateUrl('register_user'));
                 }
             }
         }
         return $this->render(
-            'Blog/registro.html.twig',
+            'Api/registro.html.twig',
             array('form' => $form->createView())
         );
     }

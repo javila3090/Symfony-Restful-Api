@@ -92,7 +92,8 @@ class ProductController extends FOSRestController implements ClassResourceInterf
             '_format' => $request->get('_format'),
         ];
         
-        return $this->routeRedirectView('CREATED SUCCESSFULLY', $routeOptions, Response::HTTP_CREATED);
+        
+        return new View("Created Successfully", Response::HTTP_CREATED);
     }    
     
     public function putAction(Request $request, $id)
@@ -128,7 +129,8 @@ class ProductController extends FOSRestController implements ClassResourceInterf
             '_format' => $request->get('_format'),
         ];
 
-        return $this->routeRedirectView("UPDATED SUCCESSFULLY", $routeOptions, Response::HTTP_NO_CONTENT);
+        //return $this->routeRedirectView('get_product', $routeOptions, Response::HTTP_NO_CONTENT);
+        return new View("Updated Successfully", Response::HTTP_CREATED);
     }    
     
      /**
