@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "924d7a0c4e64bb08e6bbb6bd6ea57b61",
+    "content-hash": "2a8ddbd8da30a42508cb8d0f73ab879f",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1380,6 +1380,50 @@
                 "xml"
             ],
             "time": "2017-05-10T10:17:17+00:00"
+        },
+        {
+            "name": "mashape/unirest-php",
+            "version": "v2.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mashape/unirest-php.git",
+                "reference": "73c2d903232bb5a125396e606b67314a87b8b21c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/73c2d903232bb5a125396e606b67314a87b8b21c",
+                "reference": "73c2d903232bb5a125396e606b67314a87b8b21c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "0.1.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Unirest": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Unirest PHP",
+            "homepage": "https://github.com/Mashape/unirest-php",
+            "keywords": [
+                "client",
+                "curl",
+                "http",
+                "https",
+                "rest"
+            ],
+            "time": "2016-02-16T16:45:52+00:00"
         },
         {
             "name": "michelf/php-markdown",

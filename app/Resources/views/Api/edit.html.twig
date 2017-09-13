@@ -1,0 +1,46 @@
+{% extends '::baseSecure.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            {% for mensaje in app.session.flashbag().get('info') %}
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ mensaje }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4 col-md-offset-4 text-center">
+            {% for mensaje in app.session.flashbag().get('error') %}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ mensaje }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Edit product</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-10">
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>Fields with <span style="color:red">*</span> are mandatory</b></div>
+                <div class="panel-body">
+                    <form action="" method="post">
+                        {{ form_widget(form) }}
+                        <br>
+                        <button type="submit" class="btn btn-success">Update</button>
+                        {{ form_errors(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

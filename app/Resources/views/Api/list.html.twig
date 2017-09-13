@@ -1,0 +1,58 @@
+{% extends '::baseSecure.html.twig' %}
+    
+{% block body %}
+    <div class="">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>List of products</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center">
+                {% for mensaje in app.session.flashbag().get('info') %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ mensaje }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-10 text-center">
+                {% for mensaje in app.session.flashbag().get('error') %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ mensaje }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-10 ">
+                <table id="skills" class="table table-bordered table-responsive table-hover text-center">
+                    <thead class="table-header" style="background-color: lightsteelblue">                
+                        <tr>
+                            <td><b>Name</b></td>
+                            <td><b>Description</b></td>
+                            <td><b>Size</b></td>
+                            <td><b>Cost</b></td>
+                            <td><b>Edit</b></td>
+                            <td><b>Delete</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td>{{ product.item_name }}</td>
+                                <td>{{ product.item_description }}</td>
+                                <td>{{ product.item_size }}</td>
+                                <td>{{ product.item_cost }}</td>
+                                <td><a href="{{ path('edit_product',{'id': product.id}) }}" title="Editar" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+                                <td><a href="{{ path('delete_product',{'id': product.id}) }}" onclick="return confirm('Are you sure?')" title="Eliminar" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>   
+    </div>
+{% endblock %}

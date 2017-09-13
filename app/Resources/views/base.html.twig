@@ -24,14 +24,14 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li> <a href="{{path('blogger_blog_homepage')}}" class="smoothScroll">Inicio</a></li>                   
+                            <li> <a href="" class="smoothScroll">Inicio</a></li>                   
                         </ul>               
                         <ul class="nav navbar-nav navbar-right pull-right">
-                            <li> <a href="{{path('registro_form')}}" class="smoothScroll">Registrarse</a></li> 
+                            <li> <a href="" class="smoothScroll">Registrarse</a></li> 
                              {% if is_granted('ROLE_USER') %}
-                                <li> <a href="{{path('secure')}}" class="smoothScroll">Ir al Panel</a></li>
+                                <li> <a href="" class="smoothScroll">Ir al Panel</a></li>
                              {% else %}
-                                <li> <a href="{{path('admin')}}" class="smoothScroll">Ingresar</a></li>
+                                <li> <a href="" class="smoothScroll">Ingresar</a></li>
                              {% endif %}
                             
                         </ul>

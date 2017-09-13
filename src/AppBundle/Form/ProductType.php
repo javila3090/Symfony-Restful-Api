@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 /**
  * Description of ProductType
@@ -19,21 +20,24 @@ class ProductType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('item_name', TextType::class, array("label" => "Name* ",
+        $builder->add('item_name', TextType::class, array("label" => "Name * ",
                     "required" => true,
                     "attr" => array('class' => 'form-control')))      
                 
-                ->add('item_size', TextType::class, array("label" => "Size* ",
+                ->add('item_size', TextType::class, array("label" => "Size * ",
                     "required" => true,
                     "attr" => array('class' => 'form-control')))  
                 
-                ->add('item_cost', TextType::class, array("label" => "Cost* ",
+                ->add('item_cost', TextType::class, array("label" => "Cost *",
                     "required" => true,
                     "attr" => array('class' => 'form-control')))                  
                 
-                ->add('item_description', TextareaType::class, array("label" => "Description* ",
+                ->add('item_description', TextareaType::class, array("label" => "Description * ",
                     "required" => true,
-                    "attr" => array('class' => 'form-control','rowspan' => '3')));         
+                    "attr" => array('class' => 'form-control','rowspan' => '3')))     
+                ->add('id', HiddenType::class, array("label" => "Id * ",
+                    "required" => true,
+                    "attr" => array('class' => 'form-control','rowspan' => '3'))); 
     }
 
     public function getName() {
